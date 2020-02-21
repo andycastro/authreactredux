@@ -14,17 +14,17 @@ class SignIn extends Component {
   };
 
   state = {
-    username: '',
+    email: '',
     password: '',
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     const { signInRequest } = this.props;
 
-    signInRequest(username, password);
+    signInRequest(email, password);
   }
 
   handleInputChange = (e) => {
@@ -32,13 +32,13 @@ class SignIn extends Component {
   }
 
   render() {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
 
     return (
       <>
         <h1>.</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="username" value={username} onChange={this.handleInputChange} />
+          <input type="text" name="email" value={email} onChange={this.handleInputChange} />
           <input type="password" name="password" value={password} onChange={this.handleInputChange} />
           <button type="submit">entrar</button>
         </form>
